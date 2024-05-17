@@ -14,11 +14,14 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -68,7 +71,7 @@ fun Greeting(modifier: Modifier = Modifier) {
     Column(
         modifier = modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Spacer(modifier = modifier.height(15.dp))
+        Spacer(modifier = modifier.height(16.dp))
         ArtworkDisplay(currentArtwork = currentArtwork)
         ArtworkTitle(title = title, year = year)
         Row(
@@ -140,14 +143,40 @@ fun Greeting(modifier: Modifier = Modifier) {
 fun ArtworkDisplay(
     modifier: Modifier = Modifier, @DrawableRes currentArtwork: Int
 ) {
-    Image(
-        painter = painterResource(currentArtwork),
-        contentDescription = null,
+    Box(
         modifier = modifier
             .fillMaxWidth()
-            .padding(50.dp),
-        contentScale = ContentScale.FillWidth
-    )
+            .aspectRatio(0.8f)
+            .width(600.dp)
+            .padding(15.dp)
+    ) {
+        Box(
+            modifier = modifier
+                .fillMaxSize()
+                .padding(5.dp)
+                .background(Color.White),
+            contentAlignment = Alignment.Center
+        ) {
+            Box(
+                modifier = modifier
+                    .fillMaxSize()
+                    .padding(5.dp)
+                    .background(Color.White),
+                contentAlignment = Alignment.Center
+            ) {
+                Image(
+                    painter = painterResource(currentArtwork),
+                    contentDescription = null,
+                    modifier = modifier
+                        .fillMaxWidth()
+                        .aspectRatio(0.8f)
+                        .width(600.dp)
+                        .padding(20.dp),
+                    contentScale = ContentScale.Crop
+                )
+            }
+        }
+    }
 }
 
 @Composable
