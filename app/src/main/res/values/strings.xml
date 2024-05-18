@@ -1,15 +1,15 @@
 <resources>
     <string name="app_name">Art Space</string>
 
-    <string name="capture">The Capture of Christ</string>
+    <string name="capture">A Captura de Cristo</string>
     <string name="capture_author">Giovanni Cimabue</string>
     <string name="capture_year">(1270)</string>
 
-    <string name="crucifixion">Crucifixion</string>
+    <string name="crucifixion">Crucificação</string>
     <string name="crucifixion_author">Fra Angelico</string>
     <string name="crucifixion_year">(1420)</string>
 
-    <string name="calling">The Calling of the Apostles Peter and Andrew</string>
+    <string name="calling">O Chamado dos Apóstolos Pedro e André</string>
     <string name="calling_author">Duccio di Buoninsegna</string>
     <string name="calling_year">(1311)</string>
 </resources>
