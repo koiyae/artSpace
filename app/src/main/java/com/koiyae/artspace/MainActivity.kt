@@ -63,7 +63,7 @@ class MainActivity : ComponentActivity() {
                             modifier = Modifier.fillMaxWidth(),
                         ) {
                             CenterAlignedTopAppBar(
-                                modifier = Modifier.clip(shape = RoundedCornerShape(30.dp)),
+                                modifier = Modifier.clip(shape = RoundedCornerShape(40.dp)),
                                 title = {
                                     Text(
                                         text = "Gótico",
@@ -74,7 +74,7 @@ class MainActivity : ComponentActivity() {
                                     )
                                 },
                                 colors = TopAppBarDefaults.largeTopAppBarColors(
-                                    containerColor = Color(0xFFF9F5D7)
+                                    containerColor = Color(0xFFF9F5D7).copy(alpha = 0.5f)
                                 )
                             )
                         }

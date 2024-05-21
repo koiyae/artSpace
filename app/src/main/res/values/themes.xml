@@ -2,6 +2,5 @@
 <resources>
 
     <style name="Theme.ArtSpace" parent="android:Theme.Material.Light.NoActionBar">
-        <item name="android:windowDrawsSystemBarBackgrounds">false</item>
     </style>
 </resources>
