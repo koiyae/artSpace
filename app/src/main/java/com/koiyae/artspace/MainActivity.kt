@@ -42,12 +42,15 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.view.WindowCompat
 import com.koiyae.artspace.ui.theme.ArtSpaceTheme
+
 
 class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3Api::class)
@@ -63,18 +66,20 @@ class MainActivity : ComponentActivity() {
                             modifier = Modifier.fillMaxWidth(),
                         ) {
                             CenterAlignedTopAppBar(
-                                modifier = Modifier.clip(shape = RoundedCornerShape(40.dp)),
+                                modifier = Modifier.clip(shape = RoundedCornerShape(35.dp)),
                                 title = {
                                     Text(
                                         text = "Gótico",
                                         style = TextStyle(
-                                            color = Color.Black, fontSize = 30.sp
+                                            fontFamily = FontFamily(Font(R.font.playfair_display)),
+                                            color = Color.Black,
+                                            fontSize = 30.sp
                                         ),
                                         fontWeight = FontWeight.Bold,
                                     )
                                 },
                                 colors = TopAppBarDefaults.largeTopAppBarColors(
-                                    containerColor = Color(0xFFF9F5D7).copy(alpha = 0.5f)
+                                    containerColor = Color(0xFF3C3836).copy(alpha = 0.2f)
                                 )
                             )
                         }
@@ -146,7 +151,10 @@ class MainActivity : ComponentActivity() {
                     )
                 ) {
                     Text(
-                        text = "Anterior", style = TextStyle(fontWeight = FontWeight.Bold)
+                        text = "Anterior", style = TextStyle(
+                            fontWeight = FontWeight.Bold,
+                            fontFamily = FontFamily(Font(R.font.lora_bold))
+                        )
                     )
                 }
                 Button(
@@ -186,7 +194,10 @@ class MainActivity : ComponentActivity() {
                     )
                 ) {
                     Text(
-                        text = "Próximo", style = TextStyle(fontWeight = FontWeight.Bold)
+                        text = "Próximo", style = TextStyle(
+                            fontWeight = FontWeight.Bold,
+                            fontFamily = FontFamily(Font(R.font.lora_bold))
+                        )
                     )
                 }
             }
@@ -254,8 +265,11 @@ class MainActivity : ComponentActivity() {
                 ) {
                     Text(
                         text = stringResource(title),
-                        style = TextStyle(fontSize = 25.sp),
-                        fontWeight = FontWeight.Light,
+                        style = TextStyle(
+                            fontSize = 25.sp,
+                            fontFamily = FontFamily(Font(R.font.merriweather_light))
+                        ),
+                        fontWeight = FontWeight.Thin,
                         color = Color.Black,
                         modifier = modifier
                             .fillMaxWidth()
@@ -264,15 +278,20 @@ class MainActivity : ComponentActivity() {
                     Row {
                         Text(
                             text = stringResource(author),
-                            style = TextStyle(fontSize = 20.sp),
+                            style = TextStyle(
+                                fontSize = 20.sp, fontFamily = FontFamily(Font(R.font.merriweather))
+                            ),
                             color = Color.Black,
                             fontWeight = FontWeight.Bold,
-                            modifier = modifier
+                            modifier = modifier,
                         )
                         Text(
                             text = stringResource(year),
-                            style = TextStyle(fontSize = 20.sp),
+                            style = TextStyle(
+                                fontSize = 20.sp, fontFamily = FontFamily(Font(R.font.merriweather))
+                            ),
                             color = Color.Black,
+                            fontWeight = FontWeight.Bold,
                             modifier = modifier.padding(start = 5.dp)
                         )
                     }
