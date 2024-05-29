@@ -66,14 +66,7 @@ class MainActivity : ComponentActivity() {
                             modifier = Modifier.fillMaxWidth(),
                         ) {
                             CenterAlignedTopAppBar(
-                                modifier = Modifier.clip(
-                                    shape = RoundedCornerShape(
-                                        topStart = 0.dp,
-                                        topEnd = 0.dp,
-                                        bottomEnd = 40.dp,
-                                        bottomStart = 40.dp
-                                    )
-                                ),
+                                modifier = Modifier,
                                 title = {
                                     Text(
                                         text = "Gótico",
